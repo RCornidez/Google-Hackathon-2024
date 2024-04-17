@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'landing_page.dart';
 import 'package:lottie/lottie.dart';
+import 'landing_page.dart';
 
 class LoadingPage extends StatefulWidget {
   @override
@@ -12,6 +11,7 @@ class _LoadingPageState extends State<LoadingPage> {
   @override
   void initState() {
     super.initState();
+    // Navigate to the LandingPage after a delay
     Future.delayed(Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
@@ -24,12 +24,12 @@ class _LoadingPageState extends State<LoadingPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Lottie.asset('assets/loading.json'),
-            ],
+        child: Container(
+          width: MediaQuery.of(context).size.width, // Screen width
+          height: MediaQuery.of(context).size.height, // Screen height
+          child: Lottie.asset(
+            'assets/lottie_tree_loading_screen.json',
+            fit: BoxFit.cover, // Make the animation fill the available space
           ),
         ),
       ),

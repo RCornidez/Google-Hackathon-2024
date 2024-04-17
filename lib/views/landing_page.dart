@@ -88,10 +88,18 @@ class _LandingPageState extends State<LandingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Landing Page")),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
+          Container(
+            padding: EdgeInsets.all(20),
+            child: Image.asset(
+              'assets/logo_496_59.9.png',
+              alignment: Alignment.topCenter,
+              height: 180.0, // Set the height you want
+              fit: BoxFit.contain, // Maintain the aspect ratio
+            ),
+          ),
           Expanded(
             child: Card(
               elevation: 5,
