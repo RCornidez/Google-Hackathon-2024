@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'landing_page.dart';
 import 'package:lottie/lottie.dart';
+import 'results_page.dart';
 
 class LoadingPage extends StatefulWidget {
   @override
@@ -12,10 +13,11 @@ class _LoadingPageState extends State<LoadingPage> {
   @override
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 3), () {
+    // Navigate to the LandingPage after a delay
+    Future.delayed(Duration(seconds: 5), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => LandingPage()),
+        MaterialPageRoute(builder: (context) => ResultsPage()),
       );
     });
   }
