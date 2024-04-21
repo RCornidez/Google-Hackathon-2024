@@ -32,7 +32,8 @@ dependencies:
     sdk: flutter
   lottie: ^3.1.0
   google_fonts: ^6.2.1
-
+  flutter_markdown: ^0.7.1
+  flutter_native_splash: ^2.4.0
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.6
@@ -96,3 +97,13 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+
+  # Splash screen background color.
+flutter_native_splash:
+  color: "#ecfdf5"
+
+  android_12:
+    color: "#ecfdf5"
+
+    

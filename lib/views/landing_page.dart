@@ -107,108 +107,73 @@ class _LandingPageState extends State<LandingPage> {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Color(0xFFCDDFF3),
-              Color(0xFF6A9FDC),
+              Color(0xFFECFDF5),
+              Color(0xFFD1FAE5),
+              Color(0xFFA7F3D0),
             ],
-            stops: [0.0, 1], // Adjust the gradient stops as needed
+            stops: [0.0, 0.5, 1.0],
           ),
         ),
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
-            children: <Widget>[
-              Container(
-                margin: EdgeInsets.only(top: 5),
-                padding: EdgeInsets.all(20),
-                child: Image.asset(
-                  'assets/logo_496_59.9.png',
-                  alignment: Alignment.topCenter,
-                  height: 180.0,
-                  fit: BoxFit.contain,
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(5),
-                child: Text(
-                  "Did you know?",
-                  textAlign: TextAlign.left,
-                  style: TextStyle(
-                    fontSize: 20,
-                    color: Color(0xFF3C905F),
-                    fontFamily: 'headlineMedium',
-                    fontWeight: FontWeight.bold,
+        child: Center(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 20),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: <Widget>[
+                Container(
+                  margin: EdgeInsets.only(bottom: 20),
+                  child: Image.asset(
+                    'assets/logo_496_59.9.png',
+                    alignment: Alignment.topCenter,
+                    height: 180.0,
+                    fit: BoxFit.contain,
                   ),
                 ),
-              ),
-              Container(
-                height: 100, // Fixed height for the fact text area
-                child: Padding(
-                  padding: EdgeInsets.all(5),
-                  child: Center(
-                    child: Text(
-                      environmentalFacts[environmentalFactIndex],
-                      textAlign: TextAlign.left,
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontFamily: 'bodyMedium',
-                      ),
+                Card(
+                  margin: EdgeInsets.all(20),
+                  child: Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
+                      children: [
+                        Text(
+                          funnyPuns[funnyPunIndex],
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.black87,
+                            fontFamily: 'bodyMedium',
+                          ),
+                        ),
+                        SizedBox(height: 20),
+                        ElevatedButton(
+                          onPressed:
+                              _isPickingFile ? null : () => _pickFiles(context),
+                          child: _isPickingFile
+                              ? CircularProgressIndicator()
+                              : Text("Upload File"),
+                        ),
+                        SizedBox(height: 10),
+                        GestureDetector(
+                          onTap: () {
+                            _showHowItWorksDialog(context);
+                          },
+                          child: Text(
+                            "How it works",
+                            style: TextStyle(
+                              decoration: TextDecoration.underline,
+                              fontFamily: 'bodyMedium',
+                              color: Color.fromARGB(255, 184, 10, 10),
+                              fontSize: 17,
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(5),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Flexible(
-                      child: Text(
-                        funnyPuns[funnyPunIndex],
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                          fontSize: 20,
-                          color: Color(0xFF3C905F),
-                          fontFamily: 'headlineMedium',
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(5),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: <Widget>[
-                    GestureDetector(
-                      onTap: () {
-                        _showHowItWorksDialog(context);
-                      },
-                      child: Text(
-                        "How it works",
-                        style: TextStyle(
-                          decoration: TextDecoration.underline,
-                          fontFamily: 'bodyMedium',
-                          color: Color.fromARGB(255, 184, 10, 10),
-                          fontSize: 17,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(5),
-                child: ElevatedButton(
-                  onPressed: _isPickingFile ? null : () => _pickFiles(context),
-                  child: _isPickingFile
-                      ? CircularProgressIndicator()
-                      : Text("Upload File"),
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
