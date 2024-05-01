@@ -4,7 +4,7 @@ The environmental conservation application submission for the Google AI Hackatho
 
 See on DevPost => https://devpost.com/software/trees-bees-and-seas
 
-See presentation on YouTube => https://www.youtube.com/watch?v=TmlGwUXieh4
+See presentation on YouTube => https://www.youtube.com/watch?v=5FJ0SAD1FOA
 
 See the API for this application => https://github.com/RCornidez/Google-Hackathon-API-2024
 
